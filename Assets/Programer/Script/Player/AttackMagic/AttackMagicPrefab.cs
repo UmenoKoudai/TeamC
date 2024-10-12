@@ -156,7 +156,7 @@ public class AttackMagicPrefab : MonoBehaviour, IMagicble, IPause, ISlow, ISpeci
         {
             return;
         }
-        if (Vector3.Distance(transform.position, _enemy.position) < 0.2f)
+        if (Vector3.Distance(transform.position, _enemy.position) < 1f)
         {
             AudioSet(PlayMagicAudioType.Stop);
             Destroy(gameObject);

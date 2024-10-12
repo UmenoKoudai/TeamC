@@ -58,21 +58,10 @@ public class AttackMagic
             _attackBase = _magicSetting[1];
         }
     }
-
-    /// <summary>
-    /// 範囲内にあるコライダーを取得する
-    /// </summary>
-    /// <returns> 移動方向 :正の値, 負の値 </returns>
-    public void Attack(int attackCount)
+    public void CheckEnemy()
     {
-        if (attackCount == _magicSetting.Count)
-        {
-            _isCanAttack = false;
-        }
-
         //敵を索敵
         Transform[] t = _playerControl.ColliderCheck.EnemySearch(_searchType, _offset, _size, 128);
-
         List<Transform> inCameraEnemys = new List<Transform>();
 
         //画面内に映っている敵を選別
@@ -93,22 +82,38 @@ public class AttackMagic
 
 
         _attackBase.Enemys = inCameraEnemys.ToArray();
+    }
+
+    /// <summary>
+    /// 範囲内にあるコライダーを取得する
+    /// </summary>
+    /// <returns> 移動方向 :正の値, 負の値 </returns>
+    public void Attack(int attackCount)
+    {
+        if (attackCount == _magicSetting.Count)
+        {
+            _isCanAttack = false;
+        }
+
+
+
+
 
         _attackBase.IsAttackNow = true;
         _attackBase.AttackCount = attackCount;
 
-        if (t.Length == 0)
-        {
-            //魔法の攻撃処理
-            // _attackBase.UseMagick(t, attackCount);
-            _shortChantingMagicAttackMove.SetEnemy(null);
-        }
-        else
-        {
-            //魔法の攻撃処理
-            // _attackBase.UseMagick(t, attackCount);
-            _shortChantingMagicAttackMove.SetEnemy(t[0]);
-        }   //タメが遅いとき
+        //if (t.Length == 0)
+        //{
+        //    //魔法の攻撃処理
+        //    // _attackBase.UseMagick(t, attackCount);
+        //    _shortChantingMagicAttackMove.SetEnemy(null);
+        //}
+        //else
+        //{
+        //    //魔法の攻撃処理
+        //    // _attackBase.UseMagick(t, attackCount);
+        //    _shortChantingMagicAttackMove.SetEnemy(t[0]);
+        //}   //タメが遅いとき
     }
 
     public void StopMagic(int attackCount)

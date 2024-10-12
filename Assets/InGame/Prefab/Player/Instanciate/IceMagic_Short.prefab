@@ -51,7 +51,7 @@ MonoBehaviour:
   _magicType: 0
   _bullet: {fileID: 7685084220883253410}
   _bulletRotateSpeed: 100
-  _lifeTime: 15
+  _lifeTime: 3
   _moveSpeed: 100
   _hormingSpeed: 30
   height: 5
@@ -106,10 +106,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.17
-  m_Height: 1.63
+  m_Radius: 0.32
+  m_Height: 4.08
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -0.2}
+  m_Center: {x: 0, y: 0, z: -0.5}
 --- !u!114 &-7928332126453716430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7685084220883253410}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

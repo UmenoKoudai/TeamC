@@ -34,11 +34,11 @@ public class ShortChantingMagicAttackMove
 
         Vector3 dirP = dirCamra;
 
-        if (_enemy != null)
-        {
-            dirP = _enemy.transform.position - _playerControl.PlayerT.position;
-            dirP.y = 0;
-        }
+        //if (_enemy != null)
+        //{
+        //    dirP = _enemy.transform.position - _playerControl.PlayerT.position;
+        //    dirP.y = 0;
+        //}
 
         Quaternion _targetRotation = Quaternion.LookRotation(dirP, Vector3.up);
 

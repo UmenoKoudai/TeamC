@@ -1301,6 +1301,12 @@ PrefabInstance:
       propertyPath: _loading
       value: 
       objectReference: {fileID: 179350985}
+    - target: {fileID: 5094629209964200041, guid: 4d5129ec68b3d8c4c8b27ab154fdb4cb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b026470dffd1c744bbcd363c7db79751,
+        type: 3}
     - target: {fileID: 6948194127645777484, guid: 4d5129ec68b3d8c4c8b27ab154fdb4cb,
         type: 3}
       propertyPath: m_Name
@@ -1383,7 +1389,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1537020160745319912, guid: 4d5129ec68b3d8c4c8b27ab154fdb4cb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d5129ec68b3d8c4c8b27ab154fdb4cb, type: 3}

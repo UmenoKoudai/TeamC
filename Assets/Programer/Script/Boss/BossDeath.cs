@@ -11,6 +11,12 @@ public class BossDeath
     [Header("消える時のエフェクト")]
     [SerializeField] private GameObject _deathEffect;
 
+    [Header("ボスのモデル")]
+    [SerializeField] private GameObject _bossModel;
+
+    [Header("ボスのモデルを消す時間")]
+    [SerializeField] private float _modelDestorytime = 5f;
+
     [Header("消えるエフェクトのOffset")]
     [SerializeField] private Vector3 _offset;
 
@@ -24,6 +30,8 @@ public class BossDeath
     {
         _bossControl = bossControl;
     }
+
+    
 
     public void FirstSetting()
     {
@@ -46,8 +54,18 @@ public class BossDeath
             {
                 _isDeathEeffect = true;
                 var go = GameObject.Instantiate(_deathEffect);
-                go.transform.position = _bossControl.BossT.position + _offset;
+                go.transform.position = _bossControl.transform.position;
+                var go2 = GameObject.Instantiate(_deathEffect);
+                go2.transform.position = _bossControl.transform.position;
+                var go3 = GameObject.Instantiate(_deathEffect);
+                go3.transform.position = _bossControl.transform.position;
+                go.SetActive(true);
             }
+        }
+
+        if (_countDestroyTime > _modelDestorytime && _bossModel.activeSelf)
+        {
+            _bossModel.SetActive(false);
         }
 
         if (_countDestroyTime > _destroyTime)

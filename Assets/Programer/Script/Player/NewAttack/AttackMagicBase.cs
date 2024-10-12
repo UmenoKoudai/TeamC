@@ -133,7 +133,14 @@ public class AttackMagicBase
 
 
             //魔法陣を出現させる
+            _magickData[attackCount - 1].MagickData[_setUpMagicCount].MagicCircle.SetActive(false);
             _magickData[attackCount - 1].MagickData[_setUpMagicCount].MagicCircle.SetActive(true);
+
+            //for (int i = 0; i < _magickData[attackCount - 1].MagickData[_setUpMagicCount].MagicCircle.transform.childCount; i++)
+            //{
+            //    _magickData[attackCount - 1].MagickData[_setUpMagicCount].MagicCircle.transform.GetChild(i).TryGetComponent<ParticleSystem>(out ParticleSystem p);
+            //    p?.Play();
+            //}
 
             //連撃数の更新
             if (_magickData[attackCount - 1].MagickData[_setUpMagicCount].AttackContinuousSetNumber > _maxContunueNumber)
@@ -176,6 +183,8 @@ public class AttackMagicBase
             //コントローラーの振動
             _playerControl.ControllerVibrationManager.OneVibration(0.2f, 0.8f, 0.8f);
 
+            //敵を探す
+            _playerControl.Attack2.AttackMagic.CheckEnemy();
             //魔法を使う
             Magic();
 
@@ -212,6 +221,7 @@ public class AttackMagicBase
 
     public void Magic()
     {
+
         //連撃番号と同じ魔法陣を使う
         foreach (var m in _magickData[_attackCount - 1].MagickData)
         {

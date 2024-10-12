@@ -53,6 +53,9 @@ public class BossControl : EnemyBase, IEnemyDamageble, IFinishingDamgeble, IPaus
     [Header("草属性の靄エフェクト")]
     [SerializeField] private List<ParticleSystem> _grassFog = new List<ParticleSystem>();
     [SerializeField] private BossStateMachine _state;
+
+    [SerializeField] private PlayerControl _playerControl;
+
     private Transform _player;
 
     public List<ParticleSystem> IceFog => _iceFog;
@@ -257,6 +260,7 @@ public class BossControl : EnemyBase, IEnemyDamageble, IFinishingDamgeble, IPaus
         if (_isDeath)
         {
             _deathCamera.SetActive(true);
+            _playerControl.LockOn.PlayerLockOnUI.DoNotLockOn();
         }
 
 

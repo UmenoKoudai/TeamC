@@ -11,6 +11,7 @@ public class PlayerLockOnUI
     [Header("Canvas")]
     [SerializeField] private RectTransform _parentUI;
 
+    private bool _isCanLockOn = true;
 
     private PlayerControl _playerControl;
 
@@ -22,9 +23,16 @@ public class PlayerLockOnUI
 
     public void LockOn(bool isLockOn)
     {
+        if (!_isCanLockOn) return;
         _lockOnUI.SetActive(isLockOn);
     }
 
+    /// <summary>ロックオンを出来なくする</summary>
+    public void DoNotLockOn()
+    {
+        _isCanLockOn = false;
+        _lockOnUI.SetActive(false);
+    }
 
 
     // UIの位置を更新する

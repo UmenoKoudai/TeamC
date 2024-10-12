@@ -78,7 +78,12 @@ public class EffectSettings : MonoBehaviour, IPause, ISlow, ISpecialMovingPause
             foreach (var effect2 in effect.Effects)
             {
                 list.Add(effect2.isPlaying);
-                effect2.Pause();
+
+                if (effect2.isPlaying)
+                {
+                    effect2.Pause();
+                }
+
             }
             _isMoviePlays.Add(list);
         }
@@ -146,7 +151,12 @@ public class EffectSettings : MonoBehaviour, IPause, ISlow, ISpecialMovingPause
             foreach (var effect2 in effect.Effects)
             {
                 list.Add(effect2.isPlaying);
-                effect2.Pause();
+
+                if (effect2.isPlaying)
+                {
+                    effect2.Pause();
+                }
+
             }
             _isPlays.Add(list);
         }

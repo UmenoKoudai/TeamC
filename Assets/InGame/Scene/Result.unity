@@ -397,8 +397,18 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2653989952188306512, guid: 2dd143153dc62ab4086cee374eb5ca39,
         type: 3}
+      propertyPath: _sRankScore
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653989952188306512, guid: 2dd143153dc62ab4086cee374eb5ca39,
+        type: 3}
       propertyPath: _idealClearTimeSeconds
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653989952188306512, guid: 2dd143153dc62ab4086cee374eb5ca39,
+        type: 3}
+      propertyPath: _idealEnemyDefeatedNum
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2653989952188306512, guid: 2dd143153dc62ab4086cee374eb5ca39,
         type: 3}
@@ -414,6 +424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _cRankScoreClearTimeGap
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653989952188306512, guid: 2dd143153dc62ab4086cee374eb5ca39,
+        type: 3}
+      propertyPath: _sRankScoreClearTimeGap
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2665695514739877939, guid: 2dd143153dc62ab4086cee374eb5ca39,
         type: 3}
